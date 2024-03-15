@@ -6,7 +6,7 @@ export default function Home() {
     <>
     <div>
       <p>Hello World</p>
-      <UserButton afterSignOutUrl="/"/>
+      <UserButton afterSignOutUrl="/" showName/>
       <SignInButton/>
     </div>
     </>
