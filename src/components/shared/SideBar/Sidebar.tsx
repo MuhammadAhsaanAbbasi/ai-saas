@@ -23,7 +23,6 @@ const Sidebar = () => {
                     <span className='text-3xl font-semibold font-["poppins"]'>Lensa A.I</span>
                 </Link>
                 <nav className='sidebar-nav'>
-                    <SignedIn>
                         <ul className='sidebar-nav_elements'>
                             {navLinks.slice(0, 6).map((link) =>{
                             const isActive = link.route == pathname
@@ -45,6 +44,7 @@ const Sidebar = () => {
                             )
                             })}
                         </ul>
+                        <SignedIn>
                         <ul className='sidebar-nav_elements'>
                             {navLinks.slice(6).map((link) =>{
                             const isActive = link.route == pathname
