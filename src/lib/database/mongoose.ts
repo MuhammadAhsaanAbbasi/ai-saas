@@ -21,7 +21,7 @@ export const connectToDatabase = async () => {
     
     if(!MONGODB_URL) throw new Error("MONGODB_URL is not defined");
     cached.promise = cached.promise || 
-    mongoose.connect(MONGODB_URL, {dbName: "lensaa.i", bufferCommands: false});
+    mongoose.connect(MONGODB_URL, {dbName: "lensaai", bufferCommands: false});
     cached.conn = await cached.promise;
     return cached.conn;
 }
