@@ -2,10 +2,11 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import lensalogo from "../../../public/lensa-app-icon.png"
-import { SignedIn, UserButton } from '@clerk/nextjs'
+import lensalogo from "../../../../public/lensa-app-icon.png"
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 import { navLinks } from '@/constants'
 import { usePathname } from 'next/navigation'
+import { Button } from '@/components/ui/button'
 const Sidebar = () => {
     const pathname = usePathname()
     return (
@@ -69,6 +70,11 @@ const Sidebar = () => {
                             </li>
                         </ul>
                     </SignedIn>
+                    <SignedOut>
+                    <Button asChild className='button bg-black-gradient bg-cover'>
+                        <SignInButton/>
+                    </Button>
+                    </SignedOut>
                 </nav>
             </div>
         </aside>
