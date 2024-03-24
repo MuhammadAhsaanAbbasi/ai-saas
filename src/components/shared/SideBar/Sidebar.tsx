@@ -17,8 +17,8 @@ const Sidebar = () => {
                     <Image
                     src={lensalogo}
                     alt='lensa logo'
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                     />
                     <span className='text-3xl font-semibold font-["poppins"]'>Lensa A.I</span>
                 </Link>
@@ -65,7 +65,7 @@ const Sidebar = () => {
                                 </li>
                             )
                             })}
-                            <li className='flex-center cursor-pointer gap-2 p-4'>
+                            <li className='flex-center cursor-pointer gap-2 p-2'>
                                 <UserButton afterSignOutUrl='/' showName/>
                             </li>
                         </ul>

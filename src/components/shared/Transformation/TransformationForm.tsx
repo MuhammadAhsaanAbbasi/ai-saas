@@ -26,6 +26,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils"
+import MediaUploader from "./MediaUploader"
 
 export const formSchema = z.object({
     title: z.string().min(2).max(50),
@@ -75,6 +76,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             height: imageSize.height,
         }))
         setNewTransformation(transformationType.config)
+        return onChangeField(value)
     }
 
     const onInputChangeHandler = (fieldName: string, value: string, type:string, onChangeField: (value: string) => void) => {
@@ -99,8 +101,8 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
     }
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <CustomField
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+            <CustomField
                     control={form.control}
                     name="title"
                     formLabel="Image Title"
@@ -164,6 +166,22 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                         )}
                     </div>
                 )}
+                <div className="media-uploader-field">
+                <CustomField
+                            control={form.control}
+                            name="publicId"
+                            className="flex size-full flex-col"
+                            render={({field})=>(
+                                <MediaUploader
+                                onValueChange={field.onChange}
+                                setImage={setImage}
+                                publicId={field.value}
+                                image={image}
+                                type={type}
+                                />
+                            )}
+                        />
+                </div>
                 <div className="flex flex-col gap-4">
                 <Button type="button" className="submit-button capitalize" 
                 disabled={isTransforming || newTransformation === null} onClick={onTransformHandler}>
