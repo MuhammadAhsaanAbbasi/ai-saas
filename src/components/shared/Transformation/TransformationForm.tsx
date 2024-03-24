@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/select"
 import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils"
 import MediaUploader from "./MediaUploader"
+import TransformImage from "./TransformImage"
 
 export const formSchema = z.object({
     title: z.string().min(2).max(50),
@@ -96,7 +97,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
         setTransformingConfig(deepMergeObjects(newTransformation, transformingConfig))
         setNewTransformation(null)
         startTransition(async() => {
-            // await updateCredits(userId, creditFee)
+            // await UpdateCredits(userId, -1)
         })
     }
     return (
@@ -181,6 +182,14 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                                 />
                             )}
                         />
+                <TransformImage
+                image={image}
+                type={type}
+                title={form.getValues().title}
+                isTransforming={isTransforming}
+                setIsTransforming={setIsTransforming}
+                transformationConfig={transformingConfig}
+                />
                 </div>
                 <div className="flex flex-col gap-4">
                 <Button type="button" className="submit-button capitalize" 
