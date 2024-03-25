@@ -1,16 +1,15 @@
 import { Schema, model, models } from "mongoose";
-import { unique } from "next/dist/build/utils";
 
-const userSchema = new Schema({
+const UserSchema = new Schema({
     clerkId: {
-        type: String, 
-        required: true, 
-        unique: true
+        type: String,
+        required: true,
+        unique: true,
     },
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     username: {
         type: String,
@@ -20,7 +19,6 @@ const userSchema = new Schema({
     photo: {
         type: String,
         required: true,
-        unique: true,
     },
     firstName: {
         type: String,
@@ -30,13 +28,14 @@ const userSchema = new Schema({
     },
     planId: {
         type: Number,
-        default: 1
+        default: 1,
     },
     creditBalance: {
         type: Number,
         default: 10,
-    }
-})
+    },
+});
 
-const User = models?.User || model("User", userSchema);
+const User = models?.User || model("User", UserSchema);
+
 export default User;
