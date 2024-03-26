@@ -24,7 +24,7 @@ const Credits = async () => {
 
             <section>
                 <ul className="credits-list">
-                    {plans.map((plan) => (
+                    {plans.map((plan) => ( 
                         <li key={plan.name} className="credits-item">
                             <div className="flex-center flex-col gap-3">
                                 <Image src={plan.icon} alt="check" width={50} height={50} />
