@@ -43,7 +43,7 @@ export async function createTransaction(transaction:CreateTransactionParams) {
         const newTransaction = await Transaction.create({...transaction,
         buyer: transaction.buyerId})
 
-        await updateCredits(transaction.buyerId, transaction.credits, transaction._id)
+        await updateCredits(transaction.buyerId, transaction.credits)
         return JSON.parse(JSON.stringify(newTransaction))
     } catch (error) {
         handleError(error)
