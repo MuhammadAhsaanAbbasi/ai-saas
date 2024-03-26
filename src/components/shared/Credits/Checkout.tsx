@@ -9,11 +9,13 @@ import { checkoutCredits } from "@/lib/actions/transaction.actions";
 import { Button } from "@/components/ui/button";
 
 const Checkout = ({
+    _id,
     plan,
     amount,
     credits,
     buyerId,
 }: {
+    _id: number,
     plan: string;
     amount: number;
     credits: number;
@@ -49,6 +51,7 @@ const Checkout = ({
 
     const onCheckout = async () => {
         const transaction = {
+            _id,
             plan,
             amount,
             credits,
