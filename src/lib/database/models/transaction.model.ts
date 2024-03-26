@@ -1,7 +1,6 @@
 import { Schema, model, models } from "mongoose";
 
 const TransactionSchema = new Schema({  
-    _id: {type: Number, required: true},
     createdAt: {type: Date, default: Date.now()},
     stripeId: {type: String, required: true, unique: true},
     amount: {type: Number, required: true},
