@@ -80,7 +80,7 @@ export async function updateCredits(userId: string, creditFee: number) {
 
         const updatedUserCredits = await User.findOneAndUpdate(
             { _id: userId },
-            { $inc: { creditBalance: creditFee }, planId: 2 },
+            { $inc: { creditBalance: creditFee, planId: 2}},
             { new: true }
         )
 
