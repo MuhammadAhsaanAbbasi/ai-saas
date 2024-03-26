@@ -74,13 +74,14 @@ export async function deleteUser(clerkId: string) {
 }
 
 // User Credit
+// Create a function that update the credits of the user and also update user plan manually planId=2
 export async function updateCredits(userId: string, creditFee: number) {
     try {
         await connectToDatabase();
 
         const updatedUserCredits = await User.findOneAndUpdate(
             { _id: userId },
-            { $inc: { creditBalance: creditFee}},
+            { $inc: { creditBalance: creditFee, planId: 2 } },
             { new: true }
         )
 
