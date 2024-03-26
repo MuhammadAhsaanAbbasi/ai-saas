@@ -18,7 +18,9 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
 
     return (
         <>
-            <Header title="Profile" subTitle="View your profile" />
+            <Header title="Profile"
+            subTitle="View your profile details and get credits!"
+            />
 
             <section className="profile">
                 <div className="profile-balance">
