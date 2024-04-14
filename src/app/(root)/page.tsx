@@ -10,7 +10,7 @@ export default async function Home({searchParams}:SearchParamProps) {
   const searchQuery = (searchParams?.query as string) || "";
 
   const images = await getAllImages({page, searchQuery})
-  return (
+  return(
     <>
     <section className="home">
         <h1 className="home-heading">
