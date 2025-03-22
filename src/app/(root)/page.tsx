@@ -14,7 +14,7 @@ export default async function Home({searchParams}:SearchParamProps) {
     <>
     <section className="home">
         <h1 className="home-heading">
-        Unleash Your Creative Vision with Lensa A.i
+        Unleash Your Creative Vision with Lensa A.I
         </h1>
         <ul className="flex-center w-full gap-20">
           {navLinks.slice(1,6).map((link) => (
